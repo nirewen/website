@@ -1,0 +1,8 @@
+[
+    { "name": "GitHub", "url": "https://github.com/nirewen", "icon": "fa-brands:github" },
+    { "name": "Twitter", "url": "https://twitter.com/Nirewen", "icon": "fa-brands:twitter" },
+    { "name": "Discord", "url": "https://dsc.bio/nirewen", "icon": "fa-brands:discord" },
+    { "name": "LinkedIn", "url": "https://linkedin.com/in/londero-edu/", "icon": "akar-icons:linkedin-box-fill" },
+    { "name": "Email", "url": "mailto:nirewen@pm.me", "icon": "ic:round-mail" },
+    { "name": "Ko-fi", "url": "https://ko-fi.com/nirewen", "icon": "cib:ko-fi" }
+]

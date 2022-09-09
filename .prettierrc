@@ -1,0 +1,11 @@
+{
+	"useTabs": false,
+	"pluginSearchDirs": ["."],
+	"arrowParens": "avoid",
+	"jsxSingleQuote": true,
+	"printWidth": 120,
+	"semi": false,
+	"singleQuote": true,
+	"tabWidth": 4,
+	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
+}

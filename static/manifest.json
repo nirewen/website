@@ -1,0 +1,21 @@
+{
+    "name": "Nirewen",
+    "short_name": "Nirewen",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#1a1b1e",
+    "theme_color": "#30a3e0",
+    "icons": [
+        {
+            "src": "/images/meta/android-chrome-192x192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/images/meta/android-chrome-512x512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ]
+}
