@@ -4,7 +4,7 @@
 
 <footer>
     Made with <Icon icon="bi:heart-fill" height="14px" color="F03E3E" /><span class="sr-only">love</span> using
-    <a href="https://kit.svelte.dev" aria-label="svelte kit"><Icon icon="logos:svelte-kit" /></a>
+    <a href="https://kit.svelte.dev" target="_blank" aria-label="svelte kit"><Icon icon="logos:svelte-kit" /></a>
 </footer>
 
 <style lang="scss">
