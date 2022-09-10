@@ -1,10 +1,12 @@
 <script lang="ts">
+    import { t } from '$lib/locale'
+
     import Icon from '@iconify/svelte'
     import type { Project } from 'src/types/Project'
 
     export let project: Project
 
-    let { name, description, url, homepage, icons } = project
+    let { name, url, homepage, icons } = project
 </script>
 
 <header class="name">
@@ -17,7 +19,7 @@
         {name}
     {/if}
 </header>
-<span class="description">{description}</span>
+<span class="description">{$t(`core.projects.${name}`)}</span>
 <div class="footer">
     <a href={url} target="_blank">
         <Icon icon="fa-brands:github" />

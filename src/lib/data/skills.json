@@ -1,5 +1,5 @@
 {
-    "Languages": [
+    "languages": [
         { "name": "HTML5", "url": "https://www.w3schools.com/html/", "icon": "simple-icons:html5" },
         { "name": "CSS3", "url": "https://www.w3schools.com/css/", "icon": "simple-icons:css3" },
         { "name": "JavaScript", "url": "https://www.javascript.com/", "icon": "simple-icons:javascript" },
@@ -8,7 +8,7 @@
         { "name": "Java", "url": "https://www.java.com/", "icon": "la:java" },
         { "name": "SASS", "url": "https://sass-lang.com/", "icon": "simple-icons:sass" }
     ],
-    "Frameworks": [
+    "frameworks": [
         { "name": "React", "url": "https://reactjs.com/", "icon": "teenyicons:react-outline" },
         { "name": "Svelte", "url": "https://svelte.dev/", "icon": "cib:svelte" },
         { "name": "Angular", "url": "https://angular.io/", "icon": "akar-icons:angular-fill" },
@@ -16,7 +16,7 @@
         { "name": "ChakraUI", "url": "https://chakra-ui.com/", "icon": "simple-icons:chakraui" },
         { "name": "Express", "url": "https://expressjs.com/", "icon": "simple-icons:express" }
     ],
-    "Tools": [
+    "tools": [
         { "name": "VSCode", "url": "https://code.visualstudio.com/", "icon": "akar-icons:vscode-fill" },
         { "name": "Git", "url": "https://git-scm.com/", "icon": "bi:git" },
         { "name": "Prisma", "url": "https://www.prisma.io/", "icon": "file-icons:prisma" },

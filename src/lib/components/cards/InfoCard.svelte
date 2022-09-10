@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { t } from '$lib/locale'
+
     import IconLink from '../IconLink.svelte'
     import socials from '$lib/data/socials.json'
 </script>
@@ -19,8 +21,8 @@
             </div>
         </div>
         <div class="description">
-            <h4>Full-stack developer</h4>
-            <span>I make websites, bots and desktop applications</span>
+            <h4>{$t('core.role')}</h4>
+            <span>{$t('core.description')}</span>
         </div>
     </div>
     <div class="socials">
