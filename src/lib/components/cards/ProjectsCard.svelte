@@ -1,4 +1,6 @@
 <script lang="ts">
+    import { t } from '$lib/locale'
+
     import Project from '../Project.svelte'
     import projects from '$lib/data/projects.json'
 </script>
@@ -13,7 +15,9 @@
         {/each}
     </ul>
     <footer>
-        <a href="https://github.com/nirewen?tab=repositories" target="_blank">More projects on my <b>GitHub</b></a>
+        <a href="https://github.com/nirewen?tab=repositories" target="_blank">
+            {@html $t('core.projects.more')}
+        </a>
     </footer>
 </section>
 

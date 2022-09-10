@@ -1,9 +1,11 @@
 import type { Load } from '@sveltejs/kit'
-import { loadTranslations, defaultLocale } from '$lib/locale'
+import { locale, loadTranslations, defaultLocale } from '$lib/locale'
 
 export const load: Load = async ({ url, params }) => {
     const { pathname } = url
     const { lang } = params
+
+    locale.set(lang!)
 
     const initLocale = lang || defaultLocale
 
