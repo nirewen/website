@@ -6,7 +6,7 @@
 </script>
 
 <section>
-    <h4>Projects</h4>
+    <h4>{$t('core.projects.title')}</h4>
     <ul class="list">
         {#each projects as project}
             <li>
