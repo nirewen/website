@@ -18,7 +18,7 @@
 <section class:open on:click={toggle}>
     {#each Object.values(languages) as [route, lang]}
         <a href="/{route}" class:active={$locale === route}>
-            <img src="https://img.icons8.com/fluency/36/{lang.icon}.png" alt="" />
+            <img src="https://img.icons8.com/fluency/48/{lang.icon}.png" alt="" />
             <span>{lang.name}</span>
         </a>
     {/each}
