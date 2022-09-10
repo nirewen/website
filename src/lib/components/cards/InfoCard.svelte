@@ -1,6 +1,6 @@
 <script lang="ts">
     import IconLink from '../IconLink.svelte'
-    import socials from '../../data/socials.json'
+    import socials from '$lib/data/socials.json'
 </script>
 
 <section>
@@ -35,7 +35,7 @@
         display: flex;
         flex-direction: column;
         flex: 1;
-        background-image: url('../../assets/card-bg.png');
+        background-image: url('$lib/assets/card-bg.png');
         background-size: cover;
 
         border-radius: 12px;

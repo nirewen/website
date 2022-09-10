@@ -1,6 +1,6 @@
 <script lang="ts">
     import IconLink from '../IconLink.svelte'
-    import skills from '../../data/skills.json'
+    import skills from '$lib/data/skills.json'
 </script>
 
 <section>

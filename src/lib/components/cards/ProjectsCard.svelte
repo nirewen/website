@@ -1,6 +1,6 @@
 <script lang="ts">
     import Project from '../Project.svelte'
-    import projects from '../../data/projects.json'
+    import projects from '$lib/data/projects.json'
 </script>
 
 <section>

@@ -1,8 +1,8 @@
 <script lang="ts">
-    import InfoCard from '$lib/cards/InfoCard.svelte'
-    import SkillsCard from '$lib/cards/SkillsCard.svelte'
-    import ProjectsCard from '$lib/cards/ProjectsCard.svelte'
-    import Footer from '$lib/Footer.svelte'
+    import InfoCard from '$lib/components/cards/InfoCard.svelte'
+    import SkillsCard from '$lib/components/cards/SkillsCard.svelte'
+    import ProjectsCard from '$lib/components/cards/ProjectsCard.svelte'
+    import Footer from '$lib/components/Footer.svelte'
 </script>
 
 <main>
