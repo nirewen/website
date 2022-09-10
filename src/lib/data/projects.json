@@ -1,20 +1,17 @@
 [
     {
         "name": "Tyrone",
-        "description": "A simple bot for Discord that is a clone of me",
         "url": "https://github.com/nirewen/Tyrone",
         "icons": ["simple-icons:javascript", "akar-icons:discord-fill"]
     },
     {
         "name": "Hangman",
-        "description": "A website to play the game of hangman online with friends",
         "url": "https://github.com/nirewen/hangman",
         "homepage": "https://nirewen-hangman.glitch.me",
         "icons": ["simple-icons:typescript", "teenyicons:react-outline", "simple-icons:express"]
     },
     {
         "name": "uno-bot",
-        "description": "A bot to play UNO on Discord using interactions",
         "url": "https://github.com/nirewen/uno-bot",
         "icons": ["simple-icons:typescript", "akar-icons:discord-fill"]
     }

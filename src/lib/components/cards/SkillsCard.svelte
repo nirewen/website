@@ -1,13 +1,15 @@
 <script lang="ts">
+    import { t } from '$lib/locale'
+
     import IconLink from '../IconLink.svelte'
-    import skills from '../../data/skills.json'
+    import skills from '$lib/data/skills.json'
 </script>
 
 <section>
-    <h4>Skills</h4>
+    <h4>{$t('core.skills.title')}</h4>
     {#each Object.entries(skills) as [title, links]}
         <div class="section">
-            <h2>{title}</h2>
+            <h2>{$t(`core.skills.${title}`)}</h2>
             <div class="links">
                 {#each links as link}
                     <IconLink {...link} />

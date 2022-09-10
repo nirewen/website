@@ -1,0 +1,10 @@
+{
+    "en": {
+        "name": "English",
+        "icon": "great-britain-circular"
+    },
+    "pt": {
+        "name": "Português",
+        "icon": "brazil-circular"
+    }
+}

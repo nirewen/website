@@ -1,10 +1,17 @@
 <script lang="ts">
+    import { t } from '$lib/locale'
+
     import Icon from '@iconify/svelte'
 </script>
 
 <footer>
-    Made with <Icon icon="bi:heart-fill" height="14px" color="F03E3E" /><span class="sr-only">love</span> using
-    <a href="https://kit.svelte.dev" target="_blank" aria-label="svelte kit"><Icon icon="logos:svelte-kit" /></a>
+    {$t('core.footer.0')}
+    <Icon icon="bi:heart-fill" height="14px" color="F03E3E" />
+    <span class="sr-only">{$t('core.footer.1')}</span>
+    {$t('core.footer.2')}
+    <a href="https://kit.svelte.dev" target="_blank" aria-label="svelte kit">
+        <Icon icon="logos:svelte-kit" />
+    </a>
 </footer>
 
 <style lang="scss">

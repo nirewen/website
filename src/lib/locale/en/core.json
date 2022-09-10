@@ -1,0 +1,18 @@
+{
+    "role": "Full-stack web developer",
+    "description": "I make websites, bots and desktop applications",
+    "skills": {
+        "title": "Skills",
+        "languages": "Languages",
+        "frameworks": "Frameworks",
+        "tools": "Tools"
+    },
+    "projects": {
+        "title": "Projects",
+        "Tyrone": "A simple bot for Discord that is a clone of me",
+        "Hangman": "A website to play the game of hangman online with friends",
+        "uno-bot": "A bot to play UNO on Discord using interactions",
+        "more": "More projects on my <b>GitHub</b>"
+    },
+    "footer": ["Made with", "love", "using"]
+}
