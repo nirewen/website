@@ -22,17 +22,17 @@
         .sort(([route]) => (route === $locale ? -1 : 1))
 </script>
 
-<section class:open on:click={toggle} use:clickOutside={close}>
+<button class:open on:click={toggle} use:clickOutside={close}>
     {#each Object.values(languages) as [route, lang] (route)}
-        <a href="/{route}" class:active={$locale === route} animate:flip={{ duration: 400 }}>
+        <a href="/{route}" class:active={$locale === route} animate:flip={{ duration: 400 }} tabindex={open ? 0 : -1}>
             <img src="https://img.icons8.com/fluency/48/{lang.icon}.png" alt="" />
             <span>{lang.name}</span>
         </a>
     {/each}
-</section>
+</button>
 
 <style lang="scss">
-    section {
+    button {
         display: flex;
         align-items: center;
         flex-shrink: 0;
