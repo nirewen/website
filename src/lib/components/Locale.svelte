@@ -37,7 +37,7 @@
             tabindex={open ? 0 : -1}
             aria-label={$t('a11y.switch-to', { language: lang.name })}
         >
-            <img src="https://img.icons8.com/fluency/48/{lang.icon}.png" alt="" />
+            <img src="/images/lang/{route}.png" alt="" />
             <span>{lang.name}</span>
         </a>
     {/each}
