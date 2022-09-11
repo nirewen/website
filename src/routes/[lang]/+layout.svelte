@@ -52,9 +52,9 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/images/meta/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/images/meta/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/images/meta/favicon-16x16.png" />
-    <link rel="mask-icon" href="/images/meta/safari-pinned-tab.svg" color="#30a3e0" />
-    <meta name="msapplication-TileColor" content="#30a3e0" />
-    <meta name="theme-color" content="#30a3e0" />
+    <link rel="mask-icon" href="/images/meta/safari-pinned-tab.svg" color={theme} />
+    <meta name="msapplication-TileColor" content={theme} />
+    <meta name="theme-color" content={theme} />
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/favicon.ico" />
 </svelte:head>
