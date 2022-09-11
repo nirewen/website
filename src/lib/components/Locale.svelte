@@ -26,7 +26,7 @@
     class:open
     on:click={toggle}
     use:clickOutside={close}
-    aria-label={open ? $t('a11y.selected-language', { language: language.name }) : $t('a11y.language-selection')}
+    aria-label={open ? $t('a11y.selected-language', { language }) : $t('a11y.language-selection')}
 >
     {#each Object.values(languages) as [route, lang] (route)}
         <a
@@ -35,10 +35,10 @@
             class:active={$locale === route}
             animate:flip={{ duration: 400 }}
             tabindex={open ? 0 : -1}
-            aria-label={$t('a11y.switch-to', { language: lang.name })}
+            aria-label={$t('a11y.switch-to', { language: lang })}
         >
             <img src="/images/lang/{route}.png" alt="" />
-            <span>{lang.name}</span>
+            <span>{lang}</span>
         </a>
     {/each}
 </button>
