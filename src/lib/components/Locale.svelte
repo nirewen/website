@@ -1,6 +1,9 @@
 <script lang="ts">
-    import Icon from '@iconify/svelte'
+    import { flip } from 'svelte/animate'
+    import { circInOut } from 'svelte/easing'
+
     import { locale, locales } from '$lib/locale'
+    import { clickOutside } from '$lib/directives/clickOutside'
 
     import langs from '$lib/locale/lang.json'
 
@@ -10,14 +13,18 @@
         open = !open
     }
 
+    function close() {
+        open = false
+    }
+
     $: languages = $locales
         .map(lang => [lang, langs[lang as keyof typeof langs]] as const)
         .sort(([route]) => (route === $locale ? -1 : 1))
 </script>
 
-<section class:open on:click={toggle}>
-    {#each Object.values(languages) as [route, lang]}
-        <a href="/{route}" class:active={$locale === route}>
+<section class:open on:click={toggle} use:clickOutside={close}>
+    {#each Object.values(languages) as [route, lang] (route)}
+        <a href="/{route}" class:active={$locale === route} animate:flip={{ duration: 400 }}>
             <img src="https://img.icons8.com/fluency/48/{lang.icon}.png" alt="" />
             <span>{lang.name}</span>
         </a>
@@ -44,7 +51,7 @@
 
         cursor: pointer;
 
-        transition: all 200ms ease-in 200ms;
+        transition: all 200ms ease-in 400ms;
 
         &.open {
             max-width: 100%;
@@ -76,7 +83,7 @@
 
             overflow: hidden;
 
-            transition: all 200ms ease-in-out, padding-right 200ms ease-in-out 200ms,
+            transition: all 200ms ease-in-out, padding-right 200ms ease-in-out 400ms,
                 background-color 200ms ease-in-out 200ms;
 
             > img {
