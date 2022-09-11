@@ -12,6 +12,7 @@
         "Tyrone": "A simple bot for Discord that is a clone of me",
         "Hangman": "A website to play the game of hangman online with friends",
         "uno-bot": "A bot to play UNO on Discord using interactions",
+        "website": "A simple website to display some of creations",
         "more": "More projects on my <b>GitHub</b>"
     },
     "footer": ["Made with", "love", "using"]

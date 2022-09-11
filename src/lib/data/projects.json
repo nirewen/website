@@ -14,5 +14,10 @@
         "name": "uno-bot",
         "url": "https://github.com/nirewen/uno-bot",
         "icons": ["simple-icons:typescript", "akar-icons:discord-fill"]
+    },
+    {
+        "name": "website",
+        "url": "https://github.com/nirewen/website",
+        "icons": ["simple-icons:typescript", "cib:svelte"]
     }
 ]
