@@ -1,7 +1,11 @@
 import i18n, { type Config } from 'sveltekit-i18n'
 import lang from './lang.json'
 
-export const config: Config = {
+interface Placeholders {
+    language?: string
+}
+
+export const config: Config<Placeholders> = {
     translations: {
         en: { lang },
         pt: { lang },
@@ -16,6 +20,16 @@ export const config: Config = {
             locale: 'pt',
             key: 'core',
             loader: async () => (await import('./pt/core.json')).default,
+        },
+        {
+            locale: 'en',
+            key: 'a11y',
+            loader: async () => (await import('./en/a11y.json')).default,
+        },
+        {
+            locale: 'pt',
+            key: 'a11y',
+            loader: async () => (await import('./pt/a11y.json')).default,
         },
     ],
 }

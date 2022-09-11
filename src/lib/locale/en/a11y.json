@@ -1,0 +1,5 @@
+{
+    "language-selection": "Language selection",
+    "selected-language": "Current language: {{language}}",
+    "switch-to": "Switch to {{language}}"
+}

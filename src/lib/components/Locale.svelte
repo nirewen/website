@@ -1,8 +1,7 @@
 <script lang="ts">
     import { flip } from 'svelte/animate'
-    import { circInOut } from 'svelte/easing'
 
-    import { locale, locales } from '$lib/locale'
+    import { t, locale, locales } from '$lib/locale'
     import { clickOutside } from '$lib/directives/clickOutside'
 
     import langs from '$lib/locale/lang.json'
@@ -20,11 +19,24 @@
     $: languages = $locales
         .map(lang => [lang, langs[lang as keyof typeof langs]] as const)
         .sort(([route]) => (route === $locale ? -1 : 1))
+    $: [slug, language] = languages.find(([l]) => l === $locale)!
 </script>
 
-<button class:open on:click={toggle} use:clickOutside={close}>
+<button
+    class:open
+    on:click={toggle}
+    use:clickOutside={close}
+    aria-label={open ? $t('a11y.selected-language', { language: language.name }) : $t('a11y.language-selection')}
+>
     {#each Object.values(languages) as [route, lang] (route)}
-        <a href="/{route}" class:active={$locale === route} animate:flip={{ duration: 400 }} tabindex={open ? 0 : -1}>
+        <a
+            lang={route}
+            href="/{route}"
+            class:active={$locale === route}
+            animate:flip={{ duration: 400 }}
+            tabindex={open ? 0 : -1}
+            aria-label={$t('a11y.switch-to', { language: lang.name })}
+        >
             <img src="https://img.icons8.com/fluency/48/{lang.icon}.png" alt="" />
             <span>{lang.name}</span>
         </a>
