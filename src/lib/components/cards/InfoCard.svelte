@@ -15,7 +15,7 @@
                     <span>Londero</span>
                 </div>
                 <div class="aka">
-                    <acronym title={$t('core.aka')}>aka</acronym>
+                    <acronym title={$t('core.aka')} aria-label={$t('core.aka')}>aka</acronym>
                     <span>Nirewen</span>
                 </div>
             </div>
