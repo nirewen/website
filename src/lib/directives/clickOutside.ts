@@ -1,5 +1,3 @@
-import { createEventDispatcher } from 'svelte'
-
 export function clickOutside(element: HTMLElement, callbackFunction: Function) {
     function onClick(event: MouseEvent) {
         if (!element.contains(event.target as Node)) {
