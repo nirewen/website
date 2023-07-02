@@ -20,7 +20,11 @@
     <Footer />
 </main>
 
-<style>
+<style lang="scss" global>
+    @import 'src/styles/reset.scss';
+    @import 'src/styles/global.scss';
+    @import 'src/styles/main.scss';
+
     main {
         display: flex;
         flex-direction: column;

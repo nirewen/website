@@ -1,0 +1,101 @@
+<script lang="ts">
+    import WidgetShowcase from '$lib/components/WidgetShowcase.svelte'
+    import Icon from '@iconify/svelte'
+    import RuWidget from './ru/+page.svelte'
+
+    function copy(widget: string, options: string) {
+        const url = new URL(window.location.href)
+        url.pathname = `/widgets/${widget}`
+        url.search = options
+
+        navigator.clipboard.writeText(url.toString())
+    }
+</script>
+
+<svelte:head>
+    <title>Nirewen - Widgets</title>
+</svelte:head>
+
+<header>
+    <a href=".." data-tooltip="Voltar" data-sveltekit-reload>
+        <Icon icon="solar:alt-arrow-left-linear" />
+    </a>
+    <h3>Widgets</h3>
+    <div>
+        <span>by</span>
+        <img class="avatar" src="/images/avatar.svg" alt="Nirewen's avatar" />
+        <h2>Nirewen</h2>
+    </div>
+</header>
+
+<WidgetShowcase slug="ru" options={{ restaurante: '1' }} tags={['Tema escuro']}>
+    <svelte:fragment slot="widget">
+        <RuWidget theme="light" />
+    </svelte:fragment>
+    <h2>Restaurante Universitário</h2>
+    <p>Um widget que mostra o cardápio do RU da UFSM</p>
+</WidgetShowcase>
+
+<footer>
+    Mais widgets em breve
+    <a class="light" role="button" href="mailto:nirewen+widgets@pm.me?subject=Sugestão%20de%20widget">
+        <Icon icon="solar:letter-bold" />
+        Sugerir um widget
+    </a>
+</footer>
+
+<style lang="scss" global>
+    @import '../../styles/global.scss';
+    @import '../../styles/main.scss';
+
+    header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        max-width: 50vw;
+        padding: 8px;
+        padding-right: 16px;
+        border-radius: 16px;
+        margin-top: 2rem;
+        background-image: url('$lib/assets/card-bg.png');
+        background-size: cover;
+        background-position: center right;
+
+        > a {
+            display: grid;
+            place-items: center;
+            width: 32px;
+            height: 32px;
+
+            > .iconify {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        h3 {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            > img {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+
+    footer {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 5rem;
+    }
+</style>

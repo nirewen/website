@@ -1,0 +1,112 @@
+:root {
+    --elevation-0: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+    --elevation-1: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    --elevation-2: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    --elevation-3: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    --elevation-4: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px,
+        rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    --elevation-5: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    --elevation-6: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+    --light-bg: rgba(255, 255, 255, 0.81);
+    --light-color: rgb(55, 53, 47);
+    --light-tabs-box-shadow: rgb(233, 233, 231);
+    --light-tab-hover: rgba(55, 53, 47, 0.08);
+    --light-line-border: rgb(233, 233, 231);
+    --light-scrollbar: rgb(55, 53, 47, 0.5);
+
+    --dark-bg: rgb(25, 25, 25);
+    --dark-color: rgba(255, 255, 255, 0.81);
+    --dark-tabs-box-shadow: rgb(47, 47, 47);
+    --dark-tab-hover: rgba(255, 255, 255, 0.055);
+    --dark-line-border: rgb(47, 47, 47);
+    --dark-scrollbar: rgba(255, 255, 255, 0.5);
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    height: 100dvh;
+    background-color: var(--bg);
+
+    --bg: var(--light-bg);
+    --color: var(--light-color);
+    --tabs-box-shadow: var(--light-tabs-box-shadow);
+    --tab-hover: var(--light-tab-hover);
+    --line-border: var(--light-line-border);
+    --scrollbar: var(--light-scrollbar);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.dark {
+    --bg: var(--dark-bg);
+    --color: var(--dark-color);
+    --tabs-box-shadow: var(--dark-tabs-box-shadow);
+    --tab-hover: var(--dark-tab-hover);
+    --line-border: var(--dark-line-border);
+    --scrollbar: var(--dark-scrollbar);
+}
+
+button,
+a[role='button'] {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    background: var(--dark-bg);
+    color: var(--dark-color);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+
+    &.icon {
+        padding-inline: 8px;
+    }
+
+    &.light {
+        background: var(--light-bg);
+        color: var(--light-color);
+        border: 1px solid var(--light-color);
+    }
+}
+
+select {
+    background: var(--dark-bg);
+    color: var(--dark-color);
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    height: 42px;
+    width: 100%;
+}
+
+[data-tooltip] {
+    position: relative;
+
+    &:hover::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: calc(100% + 2px);
+        width: max-content;
+        max-width: 200px;
+        padding: 4px 8px;
+        background: black;
+        border-radius: 4px;
+        left: 50%;
+        translate: -50% 0;
+        font-size: 14px;
+    }
+}
