@@ -5,7 +5,7 @@
     import Icon from '@iconify/svelte'
     import RuWidget from '../+page.svelte'
 
-    let theme: Theme = 'dark'
+    let theme: Theme = 'light'
     let restaurante = '1'
 
     const { copied, copy } = clipboard()
