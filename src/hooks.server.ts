@@ -5,7 +5,11 @@ const routeRegex = new RegExp(/^\/[^.]*([?#].*)?$/)
 
 export const handle: Handle = async ({ event, resolve }) => {
     const { url, request } = event
-    const { pathname } = url
+    const { pathname, searchParams } = url
+
+    if (pathname !== '/') {
+        return resolve(event)
+    }
 
     // If this request is a route request
     if (routeRegex.test(pathname)) {
@@ -13,9 +17,7 @@ export const handle: Handle = async ({ event, resolve }) => {
         const supportedLocales = locales.get()
 
         // Try to get locale from `pathname`.
-        let locale = supportedLocales.find(
-            l => `${l}`.toLowerCase() === `${pathname.match(/[^/]+?(?=\/|$)/)}`.toLowerCase()
-        )
+        let locale = supportedLocales.find(l => `${l}`.toLowerCase() === searchParams.get('lang')?.toLowerCase())
 
         // If route locale is not supported
         if (!locale) {
@@ -26,7 +28,7 @@ export const handle: Handle = async ({ event, resolve }) => {
             if (!supportedLocales.includes(locale)) locale = defaultLocale
 
             // 301 redirect
-            return new Response(undefined, { headers: { location: `/${locale}${pathname}` }, status: 301 })
+            return new Response(undefined, { headers: { location: `${pathname}?lang=${locale}` }, status: 302 })
         }
 
         // Add html `lang` attribute

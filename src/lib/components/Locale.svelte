@@ -31,7 +31,7 @@
     {#each Object.values(languages) as [route, lang] (route)}
         <a
             lang={route}
-            href="/{route}"
+            href="/?lang={route}"
             class:active={$locale === route}
             animate:flip={{ duration: 400 }}
             tabindex={open ? 0 : -1}
