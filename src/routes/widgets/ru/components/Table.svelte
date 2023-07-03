@@ -23,7 +23,11 @@
             {/each}
         </div>
     </div>
-    <TabContent data={activeTab.menu} {theme} />
+    {#if activeTab}
+        <TabContent data={activeTab.menu} {theme} />
+    {:else}
+        <p>Nada para mostrar aqui...</p>
+    {/if}
 </div>
 
 <style lang="scss">
