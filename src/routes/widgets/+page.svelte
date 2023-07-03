@@ -28,9 +28,9 @@
     </div>
 </header>
 
-<WidgetShowcase slug="ru" options={{ restaurante: '1' }} tags={['Tema escuro']}>
+<WidgetShowcase slug="ru" options={{ restaurante: '1' }} tags={['Tema escuro']} live>
     <svelte:fragment slot="widget">
-        <RuWidget theme="light" />
+        <embed src="/widgets/ru?restaurante=1" width="100%" height="100%" />
     </svelte:fragment>
     <h2>Restaurante Universitário</h2>
     <p>Um widget que mostra o cardápio do RU da UFSM</p>

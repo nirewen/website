@@ -38,6 +38,7 @@
         background-color: var(--bg);
         color: var(--color);
         overflow-x: hidden;
+        height: 100%;
         font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial,
             sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
 

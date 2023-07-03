@@ -32,6 +32,7 @@
     .table {
         display: flex;
         flex-direction: column;
+        overflow-y: auto;
 
         > .tabs-wrapper {
             display: flex;

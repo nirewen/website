@@ -6,12 +6,13 @@
     export let options: Record<string, string> = {}
     export let tags: string[] = []
     export let hideFooter = false
+    export let live = false
 
     let { copied, copy } = clipboard()
 </script>
 
 <div class="showcase">
-    <div class="widget">
+    <div class="widget" class:live>
         <slot name="widget" />
     </div>
     <div class="content">
@@ -58,26 +59,29 @@
             border-radius: 8px;
             margin-top: -32px;
             box-shadow: var(--elevation-3);
-            user-select: none;
 
-            &::before {
-                content: '';
-                position: absolute;
-                inset: 0;
-                z-index: 1;
-            }
+            &:not(.live) {
+                user-select: none;
 
-            &::after {
-                content: 'Preview';
-                position: absolute;
-                bottom: 16px;
-                right: 16px;
-                background: white;
-                color: black;
-                padding: 4px 8px;
-                border-radius: 6px;
-                mix-blend-mode: difference;
-                z-index: 2;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    inset: 0;
+                    z-index: 1;
+                }
+
+                &::after {
+                    content: 'Preview';
+                    position: absolute;
+                    bottom: 16px;
+                    right: 16px;
+                    background: white;
+                    color: black;
+                    padding: 4px 8px;
+                    border-radius: 6px;
+                    mix-blend-mode: difference;
+                    z-index: 2;
+                }
             }
         }
 
