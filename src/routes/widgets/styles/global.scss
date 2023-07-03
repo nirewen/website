@@ -45,6 +45,10 @@ body {
     --scrollbar: var(--light-scrollbar);
 }
 
+#app {
+    overflow: hidden;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
