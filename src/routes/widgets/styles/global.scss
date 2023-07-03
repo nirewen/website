@@ -36,7 +36,6 @@ body {
     display: grid;
     height: 100vh;
     height: 100dvh;
-    background-color: var(--bg);
 
     --bg: var(--light-bg);
     --color: var(--light-color);
@@ -71,6 +70,7 @@ a[role='button'] {
     padding: 8px 16px;
     border: none;
     border-radius: 6px;
+    font-size: 16px;
 
     &.icon {
         padding-inline: 8px;

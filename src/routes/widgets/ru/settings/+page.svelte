@@ -3,7 +3,7 @@
     import { clipboard } from '$lib/hooks/clipboard'
     import { RESTAURANTES, type Theme } from '$lib/types/constants'
     import Icon from '@iconify/svelte'
-    import RuWidget from '../+page.svelte'
+    import RuWidget from '../+page@.svelte'
 
     let theme: Theme = 'light'
     let restaurante = '1'
@@ -50,19 +50,58 @@
     <div class="footer">
         <div class="alert">Nota: o conteúdo do widget acima é só de exemplo</div>
         <button on:click={() => copy('ru', { restaurante, theme })}>
-            <Icon icon={copied ? 'solar:check-square-bold' : 'solar:copy-bold-duotone'} />
+            <Icon icon={$copied ? 'solar:check-square-bold' : 'solar:copy-bold-duotone'} />
             Copiar link
         </button>
     </div>
 </WidgetShowcase>
 
-<style lang="scss">
+<style lang="scss" global>
+    @import 'src/styles/reset.scss';
+    @import '../../styles/global.scss';
+    @import '../../styles/main.scss';
+
     header {
         display: flex;
         align-items: center;
+        gap: 8px;
+        width: 100%;
+        max-width: 50vw;
+        padding: 8px;
+        padding-right: 16px;
+        border-radius: 16px;
+        margin-top: 2rem;
+        background-image: url('$lib/assets/card-bg.png');
+        background-size: cover;
+        background-position: center right;
 
-        > h1 {
-            justify-self: center;
+        > a {
+            display: grid;
+            place-items: center;
+            width: 32px;
+            height: 32px;
+
+            > .iconify {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        h3 {
+            display: flex;
+            align-items: center;
+            flex: 1;
+        }
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            > img {
+                width: 28px;
+                height: 28px;
+            }
         }
     }
 

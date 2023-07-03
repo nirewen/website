@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { clipboard } from '$lib/hooks/clipboard'
     import Icon from '@iconify/svelte'
 
     export let slug: string
@@ -6,23 +7,7 @@
     export let tags: string[] = []
     export let hideFooter = false
 
-    let copied = false
-
-    async function copy(widget: string, options: Record<string, string>) {
-        const url = new URL(window.location.href)
-        url.pathname = `/widgets/${widget}`
-        url.search = ''
-
-        for (let [key, value] of Object.entries(options)) {
-            url.searchParams.append(key, value)
-        }
-
-        await navigator.clipboard.writeText(url.toString())
-
-        copied = true
-
-        setTimeout(() => (copied = false), 2000)
-    }
+    let { copied, copy } = clipboard()
 </script>
 
 <div class="showcase">
@@ -40,7 +25,7 @@
                 </div>
                 <div class="options">
                     <button class="icon" on:click={() => copy(slug, options)} data-tooltip="Copiar link">
-                        <Icon icon={copied ? 'solar:check-square-bold' : 'solar:copy-bold-duotone'} />
+                        <Icon icon={$copied ? 'solar:check-square-bold' : 'solar:copy-bold-duotone'} />
                     </button>
                     <a class="icon" href="./widgets/{slug}/settings" role="button" data-tooltip="Configurar">
                         <Icon icon="solar:settings-bold" />

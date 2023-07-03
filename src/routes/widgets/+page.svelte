@@ -1,7 +1,7 @@
 <script lang="ts">
     import WidgetShowcase from '$lib/components/WidgetShowcase.svelte'
     import Icon from '@iconify/svelte'
-    import RuWidget from './ru/+page.svelte'
+    import RuWidget from './ru/+page@.svelte'
 
     function copy(widget: string, options: string) {
         const url = new URL(window.location.href)
@@ -18,7 +18,7 @@
 
 <header>
     <a href=".." data-tooltip="Voltar" data-sveltekit-reload>
-        <Icon icon="solar:alt-arrow-left-linear" />
+        <Icon icon="solar:alt-arrow-left-linear" width="24" />
     </a>
     <h3>Widgets</h3>
     <div>
@@ -44,10 +44,7 @@
     </a>
 </footer>
 
-<style lang="scss" global>
-    @import '../../styles/global.scss';
-    @import '../../styles/main.scss';
-
+<style lang="scss">
     header {
         display: flex;
         align-items: center;
@@ -67,11 +64,6 @@
             place-items: center;
             width: 32px;
             height: 32px;
-
-            > .iconify {
-                width: 24px;
-                height: 24px;
-            }
         }
 
         h3 {
