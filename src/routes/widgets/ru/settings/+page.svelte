@@ -65,8 +65,8 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        width: 100%;
-        max-width: 50vw;
+
+        width: min(100vw, 800px);
         padding: 8px;
         padding-right: 16px;
         border-radius: 16px;

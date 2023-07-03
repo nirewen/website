@@ -42,22 +42,43 @@
         flex-direction: column;
         font-family: var(--font-sans);
 
-        width: 50vw;
+        width: min(100vw, 800px);
         background-color: #1971c2;
         border-radius: 8px;
         padding: 16px;
+        margin: 0 1rem;
         margin-top: 32px;
         box-shadow: var(--elevation-2);
 
         .widget {
+            position: relative;
             background: white;
             height: 300px;
             overflow: hidden;
             border-radius: 8px;
             margin-top: -32px;
             box-shadow: var(--elevation-3);
-            pointer-events: none;
             user-select: none;
+
+            &::before {
+                content: '';
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+            }
+
+            &::after {
+                content: 'Preview';
+                position: absolute;
+                bottom: 16px;
+                right: 16px;
+                background: white;
+                color: black;
+                padding: 4px 8px;
+                border-radius: 6px;
+                mix-blend-mode: difference;
+                z-index: 2;
+            }
         }
 
         > .content {
