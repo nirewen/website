@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Nirewen - Widgets</title>
+</svelte:head>
+
 <slot />
 
 <style lang="scss" global>

@@ -43,7 +43,7 @@
     <meta name="subject" content={description} />
     <meta name="copyright" content={username} />
     <meta name="owner" content={username} />
-    <meta name="revised" content="Friday, September 9th, 2022, 01:00 am" />
+    <meta name="revised" content="Sunday, July 2nd, 2023, 11:00 pm" />
     <meta name="rating" content="General" />
 
     <link rel="fluid-icon" type="image/png" href="https://nirewen.dev/images/avatar.png" />
