@@ -1,7 +1,6 @@
 <script lang="ts">
-    import WidgetShowcase from '$lib/components/WidgetShowcase.svelte'
+    import RuShowcase from '../widgets/ru/showcase.svelte'
     import Icon from '@iconify/svelte'
-    import RuWidget from './ru/+page@.svelte'
 
     function copy(widget: string, options: string) {
         const url = new URL(window.location.href)
@@ -28,13 +27,7 @@
     </div>
 </header>
 
-<WidgetShowcase slug="ru" options={{ restaurante: '1' }} tags={['Tema escuro']} live>
-    <svelte:fragment slot="widget">
-        <embed src="/widgets/ru?restaurante=1" width="100%" height="100%" />
-    </svelte:fragment>
-    <h2>Restaurante Universitário</h2>
-    <p>Um widget que mostra o cardápio do RU da UFSM</p>
-</WidgetShowcase>
+<RuShowcase />
 
 <footer>
     Mais widgets em breve

@@ -5,7 +5,7 @@ export const load = async ({ url, fetch }) => {
     const restaurante = url.searchParams.get('restaurante')
 
     if (!restaurante) {
-        throw redirect(302, './ru?restaurante=1')
+        throw redirect(302, './ru?restaurante=1&omit=ingredients')
     }
 
     const resourceUrl = `/api/ru/${restaurante}`

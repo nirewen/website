@@ -1,11 +1,13 @@
 import { error, json } from '@sveltejs/kit'
 import axios, { toFormData } from 'axios'
 import * as cheerio from 'cheerio'
-import type { Day } from '$lib/types/day.js'
+import omitDeep from 'omit-deep'
+import type { Day, Menu } from '$lib/types/day.js'
 
 import { RESTAURANTES } from '$lib/types/constants.js'
 
-export const GET = async ({ params }) => {
+export const GET = async ({ params, url }) => {
+    const omitted = url.searchParams.getAll('omit')
     const restauranteId = Number.parseInt(params.restaurante)
     const restaurante = RESTAURANTES.find(r => r.numero === restauranteId)
 
@@ -38,7 +40,7 @@ export const GET = async ({ params }) => {
             .first()
             .text()
         const [weekday, date] = tabName.split(' - ')
-        const menu = tables.map(t => {
+        let menu: Menu[] = tables.map(t => {
             const table = $(t).find('table').first()
             const type = table.find('thead.header > tr.info > th').first().text()
             const body = table.find('tbody').first()
@@ -69,7 +71,7 @@ export const GET = async ({ params }) => {
         return {
             weekday,
             date,
-            menu,
+            menu: omitDeep(menu, omitted) as Menu[],
         }
     })
 
