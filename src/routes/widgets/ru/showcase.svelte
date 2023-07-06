@@ -42,7 +42,7 @@
             <button
                 class="icon"
                 on:click={() => copy('ru', { restaurante: RESTAURANTES[restaurante].numero, theme })}
-                data-tooltip="Copiar link"
+                data-tooltip={$copied ? 'Copiado' : 'Copiar link'}
             >
                 <Icon icon={$copied ? 'solar:check-square-bold' : 'solar:copy-bold-duotone'} width="24px" />
             </button>
