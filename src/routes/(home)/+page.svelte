@@ -1,11 +1,11 @@
 <script lang="ts">
     import { t } from '$lib/locale'
 
-    import InfoCard from '$lib/components/cards/InfoCard.svelte'
-    import SkillsCard from '$lib/components/cards/SkillsCard.svelte'
-    import ProjectsCard from '$lib/components/cards/ProjectsCard.svelte'
     import Footer from '$lib/components/Footer.svelte'
     import Locale from '$lib/components/Locale.svelte'
+    import InfoCard from '$lib/components/cards/InfoCard.svelte'
+    import ProjectsCard from '$lib/components/cards/ProjectsCard.svelte'
+    import SkillsCard from '$lib/components/cards/SkillsCard.svelte'
 </script>
 
 <svelte:head>

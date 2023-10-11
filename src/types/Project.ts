@@ -2,5 +2,8 @@ export interface Project {
     name: string
     url: string
     homepage?: string
-    icons: string[]
+    topics: string[]
+    stars: number
+    languages: string[]
+    description: string
 }

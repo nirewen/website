@@ -1,8 +1,11 @@
 <script lang="ts">
+    import { page } from '$app/stores'
     import { t } from '$lib/locale'
 
+    import type { Project as IProject } from '$lib/../types/Project'
     import Project from '../Project.svelte'
-    import projects from '$lib/data/projects.json'
+
+    let projects: IProject[] = $page.data.projects
 </script>
 
 <section>
