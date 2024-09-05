@@ -3,12 +3,17 @@
 
     export let name: string
     export let url: string
-    export let icon: string
+    export let icon: string | undefined = undefined
+    export let iconSvg: string | undefined = undefined
     export let side: 'top' | 'right' = 'top'
 </script>
 
 <a href={url} target="_blank" aria-label={name}>
-    <Icon {icon} />
+    {#if iconSvg}
+        {@html iconSvg}
+    {:else if icon}
+        <Icon {icon} />
+    {/if}
     <div class="tooltip {side}">{name}</div>
 </a>
 
