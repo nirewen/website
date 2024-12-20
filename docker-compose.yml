@@ -1,0 +1,18 @@
+services:
+    website:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        networks:
+            - proxy
+        labels:
+            - traefik.enable=true
+            - traefik.http.routers.website.rule=Host(`nirewen.dev`) && PathPrefix(`/`)
+            - traefik.http.routers.website.entrypoints=https
+            - traefik.http.routers.website.tls=true
+            - traefik.http.services.website.loadbalancer.server.port=3000
+            - traefik.docker.network=proxy
+
+networks:
+    proxy:
+        external: true
